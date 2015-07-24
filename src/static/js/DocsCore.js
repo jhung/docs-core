@@ -11,9 +11,9 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
 
     "use strict";
 
-    fluid.registerNamespace("docBase");
+    fluid.registerNamespace("docsCore");
 
-    docBase.init = function (libPath) {
+    docsCore.init = function (libPath) {
         libPath = libPath || "";
 
         fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
@@ -24,7 +24,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
             tocTemplate: libPath + "lib/infusion/src/components/tableOfContents/html/TableOfContents.html"
         });
 
-        docBase.loadSidebar("body");
+        docsCore.loadSidebar("body");
     };
 
     /******************
@@ -34,11 +34,11 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
     /**
      * Save the flag for showing/hiding the side bar into the cookie. Also retrieve and apply the flag at init.
      */
-    fluid.defaults("docBase.loadSidebar", {
+    fluid.defaults("docsCore.loadSidebar", {
         gradeNames: ["fluid.viewRelayComponent", "autoInit"],
         components: {
             sidebar: {
-                type: "docBase.sidebar",
+                type: "docsCore.sidebar",
                 container: "{loadSidebar}.container",
                 options: {
                     modelListeners: {
@@ -65,7 +65,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
                 type: "fluid.cookieStore",
                 options: {
                     cookie: {
-                        name: "docBase-settings"
+                        name: "docsCore-settings"
                     }
                 }
             }
@@ -79,13 +79,13 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
     /**
      * Apply or remove the style for showing/hiding the side bar based on the model value.
      */
-    fluid.defaults("docBase.sidebar", {
+    fluid.defaults("docsCore.sidebar", {
         gradeNames: ["fluid.viewRelayComponent", "autoInit"],
         styles: {
-            visibility: "doc-base-sidebar-visibility"
+            visibility: "docs-core-sidebar-visibility"
         },
         selectors: {
-            sidebarButton: ".doc-basec-topics"
+            sidebarButton: ".docs-corec-topics"
         },
         model: {
             sidebarStyleApplied: true
@@ -99,7 +99,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
         },
         invokers: {
             toggleSidebarStyleApplied: {
-                funcName: "docBase.toggleSidebarStyleApplied",
+                funcName: "docsCore.toggleSidebarStyleApplied",
                 args: ["{that}"]
             }
         },
@@ -112,7 +112,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
         }
     });
 
-    docBase.toggleSidebarStyleApplied = function (that) {
+    docsCore.toggleSidebarStyleApplied = function (that) {
         that.applier.change("sidebarStyleApplied", !that.model.sidebarStyleApplied);
     };
 

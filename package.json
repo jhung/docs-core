@@ -1,6 +1,6 @@
 {
-  "name": "doc-base",
-  "description": "A docpad template for creating documentation websites.",
+  "name": "docs-core",
+  "description": "Helpers and libraries for the docs-template project.",
   "version": "0.0.1-SNAPSHOT",
   "author": "Fluid Project",
   "bugs": "http://issues.fluidproject.org/browse/FLUID",
