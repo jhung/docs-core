@@ -2,7 +2,7 @@ This version of Infusion was created using a custom build from the master branch
 
 https://github.com/fluid-project/infusion/
 
-commit 809231c7525798ead15f214497721b6ea9e619f7
+commit 4c2ba7903a0543fdc0f78edc79fd436ef4bee0ae
 
 using the command line:
 ```
@@ -22,7 +22,7 @@ code that is included in the infusion-uio.js file or is not required by this plu
 * src/components/textToSpeech/
 * src/components/uiOptions/
 * src/framework/core/js/
-* src/framework/core/coreDependencies.json
+* src/framework/core/frameworkDependencies.json
 * src/framework/enhancement/
 * src/framework/preferences/js/
 * src/framework/preferences/preferencesDependencies.json

@@ -1,40 +1,9 @@
-Infusion Documentation
-======================
+Documentation Base
+==================
 
-## Browse the Infusion Documentation on GitHub
+This project contains shared files and components used for documentation style
+websites, and is required by the doc-base-start project.
 
+## To Build
 
-You can [browse the Infusion Documentation directly on GitHub](src/documents).
-
-## Build with DocPad
-
-
-Install DocPad:
-
-```
-npm install -g docpad
-```
-
-Get the node modules for this project:
-
-```
-npm install
-```
-
-To generate the HTML and run the DocPad server locally:
-
-```
-docpad run --env static
-```
-
-Point your browser to:
-
-```
-http://localhost:9778/
-```
-
-## Deploy to GitHub Pages
-
-```
-docpad deploy-ghpages --env static
-```
+Build by running: `npm install`
