@@ -21,7 +21,10 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
                 templatePrefix: libPath + "lib/infusion/src/framework/preferences/html",
                 messagePrefix: libPath + "lib/infusion/src/framework/preferences/messages",
             },
-            tocTemplate: libPath + "lib/infusion/src/components/tableOfContents/html/TableOfContents.html"
+            tocTemplate: libPath + "lib/infusion/src/components/tableOfContents/html/TableOfContents.html",
+            ignoreForToC: {
+                "sidebar": "#topics"
+            }
         });
 
         docsCore.loadSidebar("body");
