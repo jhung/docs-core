@@ -23,7 +23,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
             },
             tocTemplate: libPath + "lib/infusion/src/components/tableOfContents/html/TableOfContents.html",
             ignoreForToC: {
-                "sidebar": "#topics"
+                "ignore": ".ignore-for-TOC"
             }
         });
 
