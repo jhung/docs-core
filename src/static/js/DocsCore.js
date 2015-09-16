@@ -51,14 +51,14 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
                         }
                     },
                     model: {
-                        open: {
+                        expanded: {
                             expander: {
                                 funcName: "fluid.get",
                                 args: [{
                                     expander: {
                                         funcName: "{cookieStore}.get"
                                     }
-                                }, "open"]
+                                }, "expanded"]
                             }
                         }
                     }
