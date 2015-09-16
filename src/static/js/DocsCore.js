@@ -51,14 +51,14 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
                         }
                     },
                     model: {
-                        sidebarStyleApplied: {
+                        open: {
                             expander: {
                                 funcName: "fluid.get",
                                 args: [{
                                     expander: {
                                         funcName: "{cookieStore}.get"
                                     }
-                                }, "sidebarStyleApplied"]
+                                }, "open"]
                             }
                         }
                     }
@@ -85,38 +85,78 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
     fluid.defaults("docsCore.sidebar", {
         gradeNames: ["fluid.viewRelayComponent", "autoInit"],
         styles: {
-            visibility: "docs-core-sidebar-visibility"
+            expanded: "docs-core-sidebar-expanded"
         },
         selectors: {
-            sidebarButton: ".docs-corec-topics"
+            sidebarButton: ".docs-corec-sidebar-toggle",
+            sidebar: ".docs-corec-sidebar-bar"
+        },
+        strings: {
+            expandedText: "Hide Topics",
+            collapsedText: "Show Topics"
+        },
+        members: {
+            sidebarID: {
+                expander: {
+                    funcName: "fluid.allocateSimpleId",
+                    args: ["{that}.dom.sidebar"]
+                }
+            }
         },
         model: {
-            sidebarStyleApplied: true
+            expanded: true
         },
         modelListeners: {
-            sidebarStyleApplied: {
-                this: "{that}.container",
-                method: "toggleClass",
-                args: ["{that}.options.styles.visibility", "{change}.value"]
+            expanded: {
+                func: "{that}.toggleExpansion",
+                args: ["{change}.value"]
             }
         },
         invokers: {
-            toggleSidebarStyleApplied: {
-                funcName: "docsCore.toggleSidebarStyleApplied",
+            toggleModel: {
+                funcName: "docsCore.toggleModel",
                 args: ["{that}"]
+            },
+            toggleExpansion: {
+                funcName: "docsCore.toggleExpansion",
+                args: ["{that}", "{arguments}.0"]
+            },
+            clickToggle: {
+                funcName: "docsCore.prevenDefault",
+                args: ["{arguments}.0", "{that}.toggleModel"]
             }
         },
         listeners: {
-            "onCreate.clickTopics": {
+            "onCreate.clickTopics": [{
                 "this": "{that}.dom.sidebarButton",
                 method: "click",
-                args: ["{that}.toggleSidebarStyleApplied"]
+                args: ["{that}.clickToggle"]
+            }],
+            "onCreate.setAria": {
+                "this": "{that}.dom.sidebarButton",
+                method: "attr",
+                args: [{
+                    role: "button",
+                    "aria-controls": "{that}.sidebarID"
+                }]
             }
         }
     });
 
-    docsCore.toggleSidebarStyleApplied = function (that) {
-        that.applier.change("sidebarStyleApplied", !that.model.sidebarStyleApplied);
+    docsCore.prevenDefault = function (event, fn, args) {
+        event.preventDefault();
+        fn(args);
     };
 
+    docsCore.toggleModel = function (that) {
+        that.applier.change("expanded", !that.model.expanded);
+    };
+
+    docsCore.toggleExpansion = function (that, state) {
+        that.container.toggleClass(that.options.styles.expanded, state);
+        var sidebarButton = that.locate("sidebarButton");
+        sidebarButton.attr("aria-pressed", state);
+        sidebarButton.text(that.options.strings[state ? "expandedText" : "collapsedText"]);
+        that.locate("sidebar").attr("aria-expanded", state);
+    };
 })(jQuery, fluid);
