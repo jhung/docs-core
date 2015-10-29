@@ -1,14 +1,10 @@
-# Documentation Core (docs-core)
+# Documentation Core
 
 This repository contains shared files, helpers, libraries, and components used by the `docs-template` project and derivative `docs-template` sites.
 
 # Usage
 
 `docs-core` is not used directly. `docs-core` will be fetched and deployed using `npm` by `docs-template` (and derivatives) as outlined in the `docs-template` instructions (source: https://github.com/fluid-project/docs-template).
-
-# Getting Updates to Derivative sites
-
-When updates are made `docs-core`, these changes should be adopted by derivative sites. To get the updates, run `npm install` from the derivative site.
 
 # Zurb Foundation 5.5.2
 
