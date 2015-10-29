@@ -2,7 +2,7 @@ This version of Infusion was created using a custom build from the master branch
 
 https://github.com/fluid-project/infusion/
 
-commit c9d974c3b2a667f963afd0ba90d55fc4e187bc08
+commit 4c2ba7903a0543fdc0f78edc79fd436ef4bee0ae
 
 using the command line:
 ```
@@ -34,6 +34,7 @@ code that is included in the infusion-uio.js file or is not required by this plu
 * src/lib/jquery/ui/jQueryUICoreDependencies.json
 * src/lib/jquery/ui/jQueryUIWidgetsDependencies.json
 * src/lib/jquery/ui/js/
+* src/lib/json/
 * src/lib/normamlize/normalizeDependencies.json
 * README.md
 * ReleaseNotes.md
