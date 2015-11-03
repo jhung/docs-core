@@ -65,7 +65,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
                 }
             },
             cookieStore: {
-                type: "fluid.cookieStore",
+                type: "fluid.prefs.cookieStore",
                 options: {
                     cookie: {
                         name: "docsCore-settings"
