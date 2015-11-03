@@ -2,7 +2,7 @@ This version of Infusion was created using a custom build from the master branch
 
 https://github.com/fluid-project/infusion/
 
-commit 4c2ba7903a0543fdc0f78edc79fd436ef4bee0ae
+commit c9d974c3b2a667f963afd0ba90d55fc4e187bc08
 
 using the command line:
 ```
