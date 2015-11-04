@@ -38,7 +38,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
      * Save the flag for showing/hiding the side bar into the cookie. Also retrieve and apply the flag at init.
      */
     fluid.defaults("docsCore.loadSidebar", {
-        gradeNames: ["fluid.viewRelayComponent", "autoInit"],
+        gradeNames: ["fluid.viewComponent"],
         components: {
             sidebar: {
                 type: "docsCore.sidebar",
@@ -65,7 +65,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
                 }
             },
             cookieStore: {
-                type: "fluid.cookieStore",
+                type: "fluid.prefs.cookieStore",
                 options: {
                     cookie: {
                         name: "docsCore-settings"
@@ -83,7 +83,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
      * Apply or remove the style for showing/hiding the side bar based on the model value.
      */
     fluid.defaults("docsCore.sidebar", {
-        gradeNames: ["fluid.viewRelayComponent", "autoInit"],
+        gradeNames: ["fluid.viewComponent"],
         styles: {
             expanded: "docs-core-sidebar-expanded"
         },
