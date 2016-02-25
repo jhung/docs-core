@@ -1,12 +1,17 @@
 {
   "name": "docs-core",
-  "description": "Helpers and libraries for the docs-template project.",
-  "version": "0.0.2-SNAPSHOT",
+  "description": "Helpers, templates, styles, and libraries for documentation sites.",
+  "version": "0.0.3-SNAPSHOT",
   "author": "Fluid Project",
-  "bugs": "http://issues.fluidproject.org/browse/FLUID",
+  "bugs": "https://issues.fluidproject.org/browse/FLUID/component/11810",
   "homepage": "http://www.fluidproject.org/",
   "dependencies": {
-    "URIjs": "^1.14.1"
+    "URIjs": "^1.14.1",
+    "docpad-plugin-ghpages": "~2.4.4",
+    "docpad-plugin-handlebars": "~2.3.0",
+    "docpad-plugin-highlightjs": "~2.3.0",
+    "docpad-plugin-marked": "~2.3.0",
+    "docpad-plugin-stylus": "~2.10.0",
   },
   "licenses": [
     {
